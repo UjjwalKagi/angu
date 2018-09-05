@@ -1,0 +1,96 @@
+<app-sidnav></app-sidnav>
+<div class="container">
+  <h1> Add new User</h1>
+  <form #addUserForm="ngForm" (ngSubmit)="onSubmit(addUserForm)">
+    <div class="row">
+        <div class="col-md-7">
+        <div class="form-group">
+            <label for="fname">Full Name</label>
+            <input type="text" class="form-control" id="fname" required [(ngModel)]="user.fullName" name="fullName" #fullName="ngModel">
+            <div *ngIf="!fullName?.valid && (fullName?.dirty ||fullName?.touched)" class="alert alert-danger">
+                <div [hidden]="!fullName.errors.required">
+                    Full Name is required
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-7">
+        <div class="form-group">
+            <label for="email"> Email </label>
+            <input type="text" class="form-control" id="email" required [(ngModel)]="user.email" name="email" #email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <div class="alert alert-danger" [hidden]="email.valid || email.untouched">
+                <div *ngIf="email.errors && email?.errors.required">
+                    Email is required
+                </div>
+                <div *ngIf="email.errors && email?.errors.pattern">
+                    Email is invalid
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-7">
+        <div class="form-group">
+            <label for="uname">User Name</label>
+            <input type="text" class="form-control" id="uname" required [(ngModel)]="user.username" name="username" #userName="ngModel">
+            <div *ngIf="!userName?.valid && (userName?.dirty ||userName?.touched)" class="alert alert-danger">
+                <div [hidden]="!userName.errors.required">
+                    User name must be provided
+                </div>
+            </div>
+        </div>
+        </div>
+      &nbsp;
+      <div class="col-md-7">
+      <div class="form-group">
+          <label class="label label-default">
+              Gender: </label>
+          <label class="radio-inline">
+              <input type="radio" name="gender" value="Male" [(ngModel)]="user.gender" >Male</label>
+          <label class="radio-inline">
+              <input type="radio" name="gender" value="FeMale" [(ngModel)]="user.gender"> Female</label>
+      </div>
+      </div>
+      &nbsp;
+
+      <div class="col-md-7">
+      <div class="form-group">
+          <label for="phone"> Phone Number</label>
+          <input type="number" class="form-control" id="phone" required [(ngModel)]="user.phoneNo" name="phoneNo" #phoneNo="ngModel"
+              pattern="[789][0-9]{9}">
+      </div>
+      </div>
+      <div class="col-md-6">
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password" required #passwd="ngModel">
+          <div *ngIf="!passwd?.valid && (passwd?.dirty ||passwd?.touched)" class="alert alert-danger">
+              <div [hidden]="!passwd.errors.required">
+                  Password is needed to be provided
+              </div>
+          </div>
+      </div>
+      </div>
+      
+
+      <div class="col-md-6">
+      <div class="form-group">
+          <label for="password">Confrom Password</label>
+          <input type="password" class="form-control" id="passworde" [(ngModel)]="user.cpassword" name="password" required #passwod="ngModel">
+          <div *ngIf="!passwod?.valid && (passwod?.dirty ||passwod?.touched)" class="alert alert-danger">
+              <div [hidden]="!passwod.errors.required">
+                  Password is needed to be provided
+              </div>
+          </div>
+      </div>
+      </div>
+
+      <div class="col-md-12">
+          <div class="clearfix mt15 mb15">
+              <button type="submit" class="btn btn-success" [disabled]="!addUserForm.form.valid">Submit</button>
+      </div>
+      </div>
+      </div>
+    
+  </form>
+
+</div>

@@ -1,0 +1,36 @@
+<app-header></app-header>
+&nbsp;
+<div class="container">
+  <p id="profile-name" class="profile-name-card"></p>
+  <h1>Login</h1>
+  <form class="form-signin" #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)">
+    <div class="col-md-6">
+      <label for="name"> User Name</label>
+      <input type="text" class="form-control" id="uname" required [(ngModel)]="model.username" name="username" #username="ngModel">
+      <div *ngIf="!username?.valid && (username?.dirty ||username?.touched)" class="alert alert-danger">
+        <div [hidden]="!username.errors.required">
+          Username is required
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="model.password" name="password" required #passwd="ngModel">
+      <div *ngIf="!passwd?.valid && (passwd?.dirty ||passwd?.touched)" class="alert alert-danger">
+        <div [hidden]="!passwd.errors.required">
+          Password is needed to be provided
+        </div>
+      </div>
+    </div>
+    <input type="number" class="form-control"  [(ngModel)]="model.latitude" name="latitude" hidden #lat="ngModel">
+    <input type="number" class="form-control"  [(ngModel)]="model.longitude" name="longitude" hidden #lat="ngModel">
+    <br>
+    <div class="col-md-6">
+      <button type="submit" class="btn btn-success" [disabled]="!signInForm.form.valid">Log In</button>
+
+      <a   routerLink="/forgetPassword" routerLinkActive="active">Forgot password?</a>
+    </div>
+  </form>
+</div>
+&nbsp;
+<br>

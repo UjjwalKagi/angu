@@ -1,0 +1,52 @@
+<app-sidnav></app-sidnav>
+<h1>Avaliable Order</h1>
+<form class="form-inline my-2 my-lg-0" #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+    <div class="input-group input-group-sm">
+        <label>Search By Date</label>
+        <input type="date" class="form-control" name ="date" aria-label="Small" [(ngModel)]="search.date" aria-describedby="inputGroup-sizing-sm" placeholder="Date">
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-secondary btn-number" >
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>   
+</form>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+        <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Id </th>
+                                        <th scope="col">price</th>
+                                        <th scope="col">item</th>
+                                        <th scope="col">OrderName</th>
+                                        <th scope="col">orderDate</th>
+                                        <th scope="col">Order by</th>
+                                        <th scope="col">Order To</th>
+                                        <th scope="col" class="text-right">Action</th>
+                                        <th> </th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let pho of order">
+                                    <tr>
+                                        <td>{{pho.id}}</td>
+                                        <td>{{pho.pric}}</td>
+                                        <td>{{pho.item}}</td>
+                                        <td>{{pho.orderName}}</td>
+                                        <td>{{pho.orderDate}}</td>
+                                        <td>{{pho.orderBy}}</td>
+                                        <td>{{pho.orderTo}}</td>
+                                        <td class="text-right"><button class="btn btn-danger" (click)="deleteOrder(pho.id)"><i class="fa fa-trash"></i> </button></td>
+                                    </tr>                                                          
+                                </tbody>
+                            </table>
+                        </div>
+                   
+                </div>
+            </div>
+            </div>

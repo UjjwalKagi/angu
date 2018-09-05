@@ -1,0 +1,43 @@
+<app-cheader></app-cheader>
+
+<div class="container">
+  <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+    <p>Search Store in your area</p>
+    <label>Distance</label>
+    <div class="form-group">
+    <input type="number" name="distamce" [(ngModel)]="model.distance" placeholder="in meters...">
+    <button type="submit" id="buttom" class="btn btn-success" [disabled]="!searchForm.form.valid" data-toggle="collapse" data-target="#table">Search</button>
+  </div>
+  </form>
+</div>
+
+<div id="table">
+<div class="container mb-4">
+  <div class="row">
+      <div class="col-12">
+          <div class="table-responsive">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th scope="col"> </th>
+                          <th scope="col">id</th>
+                          <th scope="col">Store Name</th>
+                          <th scope="col">Phone Number</th>
+                      </tr>
+                  </thead>
+                  <tbody *ngFor="let pho of store">
+                      <tr>
+                          <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+                          <td>{{pho.storeId}}</td>
+                          <td>{{pho.storeName}}</td>
+                          <td>{{pho.phoneNo}}</td>
+                          <td class="text-right"><button class="btn btn-danger " (click)="seePrice(pho.storeId)">See Price </button></td>
+                      </tr>                                                          
+                  </tbody>
+              </table>
+          </div>
+      </div>
+     
+  </div>
+</div>
+</div>

@@ -1,0 +1,63 @@
+<app-storesidenav></app-storesidenav>
+<div class="container">
+  <form #storeForm="ngForm" (ngSubmit)="onSubmit(storeForm)">
+        <input type="number" name="id" [(ngModel)]="model.id" hidden>
+      <div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="fname">Store Name</label>
+                  <input type="text" class="form-control" id="fname" required [(ngModel)]="model.storeName" name="storeName" #storename="ngModel">
+                  <div *ngIf="!storename?.valid && (storename?.dirty ||storename?.touched)" class="alert alert-danger">
+                      <div [hidden]="!storename.errors.required">
+                          Store Name is required
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6">
+          <div class="form-group">
+              <label for="email"> Email </label>
+              <input type="text" class="form-control" id="email" required [(ngModel)]="model.email" name="email" #email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+              <div class="alert alert-danger" [hidden]="email.valid || email.untouched">
+                  <div *ngIf="email.errors && email?.errors.required">
+                      Email is required
+                  </div>
+                  <div *ngIf="email.errors && email?.errors.pattern">
+                      Email is invalid
+                  </div>
+              </div>
+          </div>
+      </div>
+          <div class="col-md-6">
+          <div class="form-group">
+              <label for="phone"> Phone Number</label>
+              <input type="number" class="form-control" id="phone" required [(ngModel)]="model.phoneNo" name="phoneNo" #phoneNo="ngModel"
+                  pattern="[789][0-9]{9}">
+          </div>
+      </div>
+          <div class="col-md-6">
+          <div class="form-group">
+              <label for="pan"> Pan Number</label>
+              <input type="number" class="form-control" id="phone" required [(ngModel)]="model.panNo" name="panNo" #panNo="ngModel">
+          </div>
+      </div>
+          <div class="col-md-6">
+          <div class="form-group">
+              <label for="uname">User Name</label>
+              <input type="text" class="form-control" id="uname" required [(ngModel)]="model.username" name="username" #userName="ngModel">
+              <div *ngIf="!userName?.valid && (userName?.dirty ||userName?.touched)" class="alert alert-danger">
+                  <div [hidden]="!userName.errors.required">
+                      User name must be provided
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-12">
+              <div class="clearfix mt15 mb15">
+          <button type="submit" class="btn btn-success" [disabled]="!storeForm.form.valid">Submit</button>
+          </div>
+          </div>
+          </div>
+  </form>
+  </div>

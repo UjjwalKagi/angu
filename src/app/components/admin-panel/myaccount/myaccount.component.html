@@ -1,0 +1,36 @@
+<app-sidnav></app-sidnav>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <table >
+                <tr>Full Name
+                    <td>{{user.fullName}}</td>
+                </tr>
+
+                <br>
+                <br>
+                <tr>Email
+                    <td>{{user.email}}</td>
+                </tr>
+                <br>
+                <br>
+                <tr>Username
+                    <td>{{user.username}}</td>
+                </tr>
+                <br>
+                <br>
+
+                <tr>Phone Number
+                    <td>{{user.phoneNo}}</td>
+                </tr>
+                <br>
+                <br>
+            </table>
+
+            <a routerLink="/changepassword" class="btn btn-primary " routerLinkActive="active">Change Password</a>
+        </div>
+    </div>

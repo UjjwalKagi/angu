@@ -1,0 +1,58 @@
+<app-sidnav></app-sidnav>
+<div class="container">
+    <h2> Edit Your Information</h2>
+    <form #editUserForm="ngForm" (ngSubmit)="onSubmit(editUserForm)"  >
+      <input type="number" name="id" [(ngModel)]="user.id" hidden>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="fullName"> Full Name</label>
+            <input type="text" class="form-control"  id="fullName" name="fullName"  required [(ngModel)]="user.fullName"  #fullName="ngModel">
+          </div>
+        </div>
+  
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="email"> Email</label>
+            <input type="text" class="form-control" id="email" name="email" required  [(ngModel)]="user.email"  #email="ngModel">
+          </div>
+        </div>
+        <div class="col-md-7">
+            <div class="form-group">
+          <label for="userName"> User Name</label>
+          <input type="text" class="form-control" id="userName" name="username" required  [(ngModel)]="user.username" #userName="ngModel">
+        </div>
+        </div>
+        &nbsp;
+  
+        <div class="col-md-7">
+            <div class="form-group">
+          <label class="label label-default">
+            Gender: </label>
+          <label class="radio-inline">
+            <input type="radio" name="gender" value="Male" [(ngModel)]="user.gender">Male</label>
+          <label class="radio-inline">
+            <input type="radio" name="gender" value="Female" [(ngModel)]="user.gender"> Female</label>
+        </div>
+        </div>
+        &nbsp;
+  
+        <div class="col-md-7">
+          <label for="phoneNo">Phone Number</label>
+          <input type="number" class="form-control" id="phoneNo"  name="phoneNo" required [(ngModel)]="user.phoneNo"  #phoneNo="ngModel">
+        </div>
+  <br>
+  <br>
+  
+        &nbsp;
+        <br>
+        <br>
+        <div class="col-md-12">
+            <div class="clearfix mt15 mb15">
+          <button type="submit" class="btn btn-success" [disabled]="!editUserForm.form.valid">Submit</button>
+        </div>
+        </div>
+      </div>
+    </form>
+  </div>

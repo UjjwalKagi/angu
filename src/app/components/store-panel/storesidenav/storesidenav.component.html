@@ -1,0 +1,58 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+<header class="cd-main-header">	
+  
+  <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+  
+  <nav class="cd-nav">
+    <ul class="cd-top-nav">
+      
+      <li class="has-children account">
+        <a href="#0">  
+          Account
+        </a>
+        <ul>
+            <a  routerLink="/store/account" routerLinkActive="active">My Account</a>
+            <a  routerLink="/store/edit" routerLinkActive="active">Edit Account</a>
+            <a  routerLink="/Logout" routerLinkActive="active">Logout</a>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header> 
+
+<main class="cd-main-content">
+  <nav class="cd-side-nav">
+    <ul>
+      <li class="cd-label">Main</li>
+      <li>
+          <a  routerLink="/store/home" routerLinkActive="active">Dashboard</a>
+      </li>
+      <li >
+          <a  routerLink="/store/item" routerLinkActive="active">Items</a>
+        
+      </li>
+
+      <li >
+        <a  routerLink="/store/storeitem" routerLinkActive="active">My Items</a>
+      
+    </li>
+
+    
+    <li >
+        <a href="#0">  
+         Order
+        </a>
+        <ul>
+            <a  routerLink="/store/deliver" routerLinkActive="active">Deliver</a>
+            <a  routerLink="/store/avaliable" routerLinkActive="active">Available</a>          
+        </ul>
+    </li>
+     
+      
+    </ul> 
+  </nav>
+  <div class="content-wrapper">
+    <p>Welcome to Store Panel</p>
+    </div> 
+ 
+</main> 

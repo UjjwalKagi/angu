@@ -1,0 +1,39 @@
+<app-sidnav></app-sidnav>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+        <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                            <a  routerLink="/newUser" class="btn btn-primary " routerLinkActive="active">Add New User</a>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Id </th>
+                                        <th scope="col">Name </th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Phone No</th>
+                                        <th scope="col" class="text-right">Action</th>
+                                        <th> </th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let pho of user">
+                                    <tr>
+                                        <td>{{pho.id}}</td>
+                                        <td>{{pho.fullName}}</td>
+                                        <td>{{pho.email}}</td>
+                                        <td>{{pho.username}}</td>
+                                        <td>{{pho.phoneNo}}</td>
+                                        <!-- <td class="text-right"><a  routerLink="/adminDashboard" class="btn btn-danger" data-ng-click="deleteOrder(pho.id)"></a></td> -->
+                                        <td class="text-right"><button class="btn btn-danger" (click)="deleteUser(pho.id)"><i class="fa fa-trash"></i> </button></td>
+                                    </tr>                                                          
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+            </div>
+        
+

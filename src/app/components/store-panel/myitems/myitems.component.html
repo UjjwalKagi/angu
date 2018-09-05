@@ -1,0 +1,49 @@
+<app-storesidenav></app-storesidenav>
+<div class="container">
+        <h2>Add New Item</h2>
+        <form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="fname">Items Name</label>
+                <input type="text" class="form-control" id="fname" required [(ngModel)]="model.itemsName" name="itemsName" #itemsname="ngModel">
+                <div *ngIf="!itemsname?.valid && (itemsname?.dirty ||itemsname?.touched)" class="alert alert-danger">
+                  <div [hidden]="!firstname.errors.required">
+                    Items Name is required
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="price"> Price</label>
+                        <input type="number" class="form-control" id="price" required [(ngModel)]="model.price" name="price" #panNo="ngModel">
+                    </div>
+                </div>
+      
+            <br>
+            <div class="row-md-6">
+              <div class="form-group">
+                Catagories
+                <select class="form-control-inline" name="district">
+                  <option value="" disabled selected>Catagories</option>
+                  <option value=""> Kitchen</option>
+                  <option value=""> Home</option>
+                </select>
+              </div>
+            </div>
+            &nbsp;
+      
+              <div class="form-group">
+                <input type="file" [(ngModel)]="model.itemsPicture" name="itemsPicture" accept="image/*" base-sixty-four-input  #itemsPicture="ngModel" >
+              </div>
+      
+            <div class="col-md-12">
+              <div class="clearfix mt15 mb15">
+                <button type="submit" class="btn btn-success" [disabled]="!itemForm.form.valid">Submit</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>

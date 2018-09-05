@@ -1,0 +1,37 @@
+<app-storesidenav></app-storesidenav>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <div class="container mb-4">
+                <div class="row">
+                    <div class="col-12">
+                        <a  routerLink="/store/addnew" class="btn btn-primary " routerLinkActive="active">Add New Item</a>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Id </th>
+                                        <th scope="col">Items Name </th>
+                                        <th scope="col">Catagories</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col" class="text-left">Picture</th>
+                                        <th scope="col" class="text-right">Action</th>
+                                        <th> </th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let pho of item">
+                                    <tr>
+                                        <td>{{pho.id}}</td>
+                                        <td>{{pho.itemsName}}</td>
+                                        <td>{{pho.categories}}</td>
+                                        <th scope="col">{{pho.categories}}</th>
+                                        <td><img src="data:image/png;base64,{{pho.itemsPicture}}" width="70px" height="60px"></td>
+                                        <td class="text-right"><a  routerLink="/asdasd" class="btn btn-danger" data-ng-click="deleteOrder(pho.id)"> Update Price</a></td>
+                                        <td><a  routerLink="/asdas" class="btn btn-danger" data-ng-click="deleteOrder(pho.id)">Delete</a> </td>
+                                    </tr>                                                          
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
